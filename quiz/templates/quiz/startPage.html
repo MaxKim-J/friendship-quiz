@@ -1,14 +1,6 @@
-{% load static %}
+{% extends 'quiz/_default.html' %} 
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/start.css' %}" />
-    <title>Friendship Quiz</title>
-  </head>
+{% block content %}
   <body>
     <div>우정퀴즈에 온 걸 환영한다구!!</div>
     <a href={% url 'generate' %}>
@@ -17,4 +9,4 @@
       </button>
     </a>
   </body>
-</html>
+{% endblock %}
