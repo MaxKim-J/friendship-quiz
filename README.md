@@ -64,11 +64,14 @@ pip install -r requirements.txt
 
 ### DB 마이그레이션
 
-앱의 models.py에 맞는 데이터베이스 스키마를 만들어 DB를 생성합니다. DB를 몽땅 날리고 초기화할때도 사용합니다.
+앱의 models.py에 맞는 데이터베이스 스키마를 만들어 DB를 생성합니다. 런 서버하기전에 최초 한번 해줍니다. 그러면 `db.sqlite3`가 만들어지는데 그게 DB입니다.
 
 ```shell
-python manage.py migrate
+python manage.py makemigrations quiz
+python manage.py migrate quiz
 ```
+
+DB 데이터를 개발하다가 날리거나 초기화해야할 필요가 있을 때는 프로젝트 루트에 있는 `db.sqlite3` 파일을 지우고 makeMigration부터 다시 합니다.
 
 ### 웹 서버 시작하기
 
@@ -77,3 +80,14 @@ python manage.py migrate
 ```shell
 python manage.py runserver
 ```
+
+### admin 이용
+
+장고는 DB에 대한 간편한 어드민을 제공합니다. 먼저 슈퍼 계정을 만들고 아이디와 비밀번호를 기억해 둡니다.
+
+```shell
+python3 manage.py createsuperuser
+# 아이디, 비밀번호, 이메일 입력
+```
+
+슈퍼유저를 만들었으면 `http://127.0.0.1:8000/admin/`로 접속한뒤 로그인을 합니다. 만약 디비를 초기화했다면 슈퍼유저도 다시 만들어야 합니다.
