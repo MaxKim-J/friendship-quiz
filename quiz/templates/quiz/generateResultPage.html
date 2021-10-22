@@ -1,0 +1,16 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/start.css' %}" />
+    <title>Friendship Quiz</title>
+  </head>
+  <body>
+    <div>{{ quiz_set_id }}번 퀴즈를 출제하는데 성공했다구~</div>
+    <div>퀴즈를 풀게 하고 싶으면 <a href={% url 'solve' id=quiz_set_id %}>여기로</a> 가라구</div>
+  </body>
+</html>
