@@ -1,6 +1,8 @@
 {% extends 'quiz/_default.html' %} 
+{% load static %}
 
 {% block content %}
+  <link rel="stylesheet" href="{% static 'css/page/startPage.css' %}" />
   <body>
     <div>우정퀴즈에 온 걸 환영한다구!!</div>
     <a href={% url 'generate' %}>
