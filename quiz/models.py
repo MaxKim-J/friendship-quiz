@@ -1,5 +1,14 @@
 from django.db import models
 from .errors import options_errors, name_errors, answer_errors
+from django.core.validators import MinValueValidator, MaxValueValidator
+
+OPTION_CHOICES = (
+  (1, '1'),
+  (2, '2'),
+  (3, '3'),
+  (4, '4'),
+  (5, '5'),
+)
 
 # Create your models here.
 class QuizSet(models.Model):
@@ -18,7 +27,7 @@ class Quiz(models.Model):
   option_3 = models.CharField(max_length=50, unique=False, verbose_name='선택지3', error_messages=options_errors)
   option_4 = models.CharField(max_length=50, unique=False, verbose_name='선택지4', error_messages=options_errors)
   option_5 = models.CharField(max_length=50, unique=False, verbose_name='선택지5', error_messages=options_errors)
-  answer = models.IntegerField(verbose_name='정답', error_messages=answer_errors)
+  answer = models.IntegerField(verbose_name='정답', error_messages=answer_errors, choices=OPTION_CHOICES)
   created_at = models.DateTimeField(auto_now_add=True)
 
 class Answer(models.Model):
