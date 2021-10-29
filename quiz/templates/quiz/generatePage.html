@@ -1,14 +1,21 @@
-{% extends 'quiz/_default.html' %} 
-{% load static %}
-
-{% block content %}
-  <link rel="stylesheet" href="{% static 'css/page/generatePage.css' %}" />
-  <body>
-    <div>퀴즈를 만드는 페이지</div>
-    <span>이름</span>
-    <input for="이름" />
-    <a href={% url 'generate-result' quiz_set_id=22 %}>
-      <button>퀴즈 다 냈음</button>
-    </a>
-  </body>
+{% extends 'quiz/_default.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'css/page/generatePage.css' %}" />
+<body>
+  <div>퀴즈를 만드는 페이지</div>
+  <form action="{% url 'generate' %}" method="post">
+    {% csrf_token %}
+    <div>{{quiz_set_form.as_p}}</div>
+    <div>{{ quiz_form_set.management_form }}</div>
+    {% for quiz_form in quiz_form_set %}
+    <div>
+      <hr />
+      <div>{{ forloop.counter }}번 문제</div>
+      <div>{{quiz_form.as_p}}</div>
+    </div>
+    {% endfor %}
+    <div>
+      <input type="submit" value="출제" />
+    </div>
+  </form>
+</body>
 {% endblock %}
