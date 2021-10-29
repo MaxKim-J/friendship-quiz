@@ -1,0 +1,24 @@
+.default-background {
+  background-color: #eaeaea;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.default-app-area {
+  background-color: #ffffff;
+  width: 450px;
+  box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 0.15);
+}
+
+.default-app-content {
+  padding: 12px;
+}
+
+@media (max-width: 450px) {
+  .default-app-area {
+    width: 100%;
+    box-shadow: none;
+  }
+}
