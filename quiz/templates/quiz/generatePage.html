@@ -6,6 +6,11 @@
     {% csrf_token %}
     <div>{{quiz_set_form.as_p}}</div>
     <div>{{ quiz_form_set.management_form }}</div>
+    {% if messages %}
+      {% for message in messages %}
+        <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+      {% endfor %}
+    {% endif %}
     {% for quiz_form in quiz_form_set %}
     <div>
       <hr />
@@ -16,6 +21,7 @@
     <div>
       <input type="submit" value="출제" />
     </div>
+   
   </form>
 </body>
 {% endblock %}
