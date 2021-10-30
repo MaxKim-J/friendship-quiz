@@ -2,6 +2,12 @@
 
 한국외대 AI융합전공 소프트웨어 공학 11조
 
+## 배포
+
+https://friendship-quiz-live.herokuapp.com
+
+매주 작업 코드 통합을 통해 매주 배포할 예정입니다.
+
 ## 📲 설치
 
 ### 1. 프로젝트 파일 다운받기(git clone 혹은 그냥 다운로드)
@@ -67,8 +73,8 @@ pip install -r requirements.txt
 앱의 models.py에 맞는 데이터베이스 스키마를 만들어 DB를 생성합니다. 런 서버하기전에 최초 한번 해줍니다. 그러면 `db.sqlite3`가 만들어지는데 그게 DB입니다.
 
 ```shell
-python manage.py makemigrations quiz
-python manage.py migrate quiz
+python manage.py makemigrations
+python manage.py migrate
 ```
 
 DB 데이터를 개발하다가 날리거나 초기화해야할 필요가 있을 때는 프로젝트 루트에 있는 `db.sqlite3` 파일을 지우고 makeMigration부터 다시 합니다.
