@@ -5,6 +5,16 @@
   <link rel="stylesheet" href="{% static 'css/page/solvePage.css' %}" />
   <body>
     <div>{{ quiz_set_id }}번 퀴즈를 푸는 페이지</div>
+    <div>
+      {% for quiz in quizes%}
+        <h2>{{quiz.question}}</h2>
+        <input type="radio" value="1"> {{quiz.option_1}}
+        <input type="radio" value="2"> {{quiz.option_2}}
+        <input type="radio" value="3"> {{quiz.option_3}}
+        <input type="radio" value="4"> {{quiz.option_4}}
+        <input type="radio" value="5"> {{quiz.option_5}}
+      {% endfor %}
+    </div>
     <div>다 풀었으면 결과 보러 가셈</div>
   </body>
 {% endblock %}
