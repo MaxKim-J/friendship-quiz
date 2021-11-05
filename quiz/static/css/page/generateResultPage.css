@@ -1,6 +1,46 @@
 body {
-  color: brown;
+  font-family: UhBee ZZIBA;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 60px;
+  text-align: center;
+  color: white;
 }
 body {
-  color: brown;
+  font-family: UhBee ZZIBA;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 60px;
+  text-align: center;
+  color: white;
+}
+
+.quizcomplete {
+  margin-top: 70px;
+  font-size: 26px;
+}
+
+a {
+  color: plum
+}
+
+.movetosolve {
+  margin-bottom: 60px;
+}
+
+button {
+  text-align: center;
+  background-color: rgba(185, 136, 223, 0.3);
+  border: 0px solid #ffffff;
+  border-radius: 13px;
+  width: 180px;
+  height: 40px;
+  line-height: 0px;
+  margin-top: 150px;
+}
+
+button:hover {
+  color: rgba(206, 168, 255, 0.459);
 }
