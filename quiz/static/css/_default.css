@@ -8,10 +8,13 @@
 
 .default-app-area {
   background-color: #000000;
-  background-image: url("C:/Users/변정민/Desktop/space.png");
+
+  background-image: url("../images/1152_700.png");
+  background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: contain;
+  background-position: center;
   width: 450px;
-  
   
   box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 0.15);
 }

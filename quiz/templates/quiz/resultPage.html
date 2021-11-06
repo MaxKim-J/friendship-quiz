@@ -4,7 +4,11 @@
 {% block content %}
   <link rel="stylesheet" href="{% static 'css/page/resultPage.css' %}" />
   <body>
-    <div>{{quiz_set_id}}번 퀴즈의 {{result_id}}번 답안 결과 페이지임</div>
+    <div class="resulttitle">{{quiz_set_id}}번 퀴즈의 {{result_id}}번 답안 결과 페이지</div><br>
+    <!--답안 불러오기-->
+    <div class="guestans">당신의 답은</div>
+    <div class="ans">{{result_id}}번 문제의 답은</div>
+    <div class="sumpoint">맞은 문제 점수 : {{answer.points}}/7</div><br>
+    <img src="{% static "images/plough.png" %}">
   </body>
 {% endblock %}
- 
