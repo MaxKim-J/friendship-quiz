@@ -11,7 +11,7 @@
     <div class="copyurl">하단의 링크를<br>지인들에게 공유해<br>퀴즈를 풀게 하세요!</div><br>
     <p>
       <span class="quizurl">
-        <input type="url" name="quizurl" value="https://friendship-quiz-live.herokuapp.com/solve/{{ quiz_set_id }}"><br>
+        <input type="url" name="quizurl" value="{{ request.get_host }}/solve/{{quiz_set_id}}"><br>
         <span></span>
       </span>
     </p>
@@ -27,7 +27,7 @@
       document.body.removeChild(t);
     }
     function copy() {
-      copyToClipboard('https://friendship-quiz-live.herokuapp.com/solve/{{ quiz_set_id }}');
+      copyToClipboard('{{ request.get_host }}/solve/{{quiz_set_id}}');
       alert("복사가 완료되었습니다.");
     }
     </script>
