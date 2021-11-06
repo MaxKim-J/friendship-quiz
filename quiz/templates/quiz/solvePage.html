@@ -4,7 +4,19 @@
 {% block content %}
   <link rel="stylesheet" href="{% static 'css/page/solvePage.css' %}" />
   <body>
-    <div>{{ quiz_set_id }}번 퀴즈를 푸는 페이지</div>
-    <div>다 풀었으면 결과 보러 가셈</div>
+    <div class="solvenumb">{{ quiz_set_id }}번 퀴즈를 푸는 페이지</div>
+    <!--퀴즈 응답자 이름 적는 란-->
+    <div class="quizguest">퀴즈 푸는 사람:</div>
+    <div class='questions'>
+      {% for quiz in quizes%}
+        <h2>{{quiz.question}}</h2>
+        <input type="radio" name="quizform" value="1"> {{quiz.option_1}}<br>
+        <input type="radio" name="quizform" value="2"> {{quiz.option_2}}<br>
+        <input type="radio" name="quizform" value="3"> {{quiz.option_3}}<br>
+        <input type="radio" name="quizform" value="4"> {{quiz.option_4}}<br>
+        <input type="radio" name="quizform" value="5"> {{quiz.option_5}}<br>
+      {% endfor %}
+    </div>
+    <button type="button" onclick="alert('제출하시겠습니까?')">퀴즈 제출 및 점수 확인</button>
   </body>
 {% endblock %}

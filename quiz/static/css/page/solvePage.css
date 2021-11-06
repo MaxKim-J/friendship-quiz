@@ -1,3 +1,44 @@
 body {
-  color: purple;
+  font-family: UhBee ZZIBA;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 60px;
+  text-align: center;
+  color: white;
+}
+
+.solvenumb {
+  font-family: UhBee MiMi;
+  font-size: 28px;
+  text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px rgb(255, 163, 250), 0 0 5px rgb(168, 138, 238);
+}
+
+.quizguest {
+  font-family: UhBee ZZIBA;
+  font-size: 18px;
+  color:rgb(226, 163, 255);
+  text-shadow: 0 0 3px rgb(171, 125, 255), 0 0 10px blue;
+}
+
+.questions {
+  line-height: 40px;
+}
+
+Button {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-shadow: 0px 4px 20px #D6C7FF, 0px 4px 20px #BFC9FF;
+  background-color: rgba(185, 136, 223, 0.3);
+  border: 0px solid #ffffff;
+  border-radius: 13px;
+  width: 180px;
+  height: 40px;
+  line-height: 0px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+Button:hover {
+  color: rgba(255, 168, 241, 0.603);
 }

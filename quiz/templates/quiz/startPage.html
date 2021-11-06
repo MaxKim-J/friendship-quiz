@@ -4,11 +4,13 @@
 {% block content %}
   <link rel="stylesheet" href="{% static 'css/page/startPage.css' %}" />
   <body>
-    <div>우정퀴즈에 온 걸 환영한다구!! 버튼을 눌러 퀴즈 출제를 시작하라구!! 얼릉 퀴즈 출제를 시작행 시작하라구</div>
-    <a href={% url 'generate' %}>
-      <button>
-        퀴즈 출제 시작하기 
-      </button>
-    </a>
+    <h1>우정퀴즈에</h1>
+    <h1 class="welcome1">오신 것을 환영합니다</h1>
+    <img src="{% static "images/plough.png" %}">
+    <div class="welcome2">하단 버튼을 눌러<br>퀴즈 출제를 시작하세요···</div>
+    <button class="startbutton">
+      <a href={% url 'generate' %}>퀴즈 출제 시작하기
+      </a>  
+    </button>
   </body>
 {% endblock %}

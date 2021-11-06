@@ -5,3 +5,48 @@ ul.errorlist {
 .error {
   color: red;
 }
+body {
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  color: white;
+}
+
+.main {
+  font-family: UhBee MiMi;
+  font-size: 28px;
+  text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px rgb(255, 163, 250), 0 0 5px rgb(168, 138, 238);
+}
+
+.quizhost {
+  font-family: UhBee ZZIBA;
+  font-size: 18px;
+  color:rgb(226, 163, 255);
+  text-shadow: 0 0 3px rgb(171, 125, 255), 0 0 10px blue;
+}
+
+.makequiz{
+  font-size: 20px;
+}
+
+.quiznumb {
+  font-family: UhBee MiMi;
+  font-size: 26px;
+  text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px rgb(125, 125, 255), 0 0 5px rgb(200, 133, 255);
+}
+
+.submitquiz {
+  color: rgb(80, 0, 146);
+  text-align: center;
+} 
+
+.answer {
+  font-family: UhBee ZZIBA;
+  color:rgb(226, 163, 255);
+  text-shadow: 0 0 3px rgb(171, 125, 255), 0 0 10px blue;
+}
+
+.submitquiz {
+  font-family: UhBee ZZIBA;
+  font-size: 18px;
+}
