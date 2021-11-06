@@ -1,4 +1,25 @@
+@font-face {
+  font-family: 'UhBee MiMi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeMiMi.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'UhBee ZZIBA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/UhBeeZZIBA-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'UhBee BEOJJI';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeBEOJJI.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'UhBee MiMi';
   font-weight: 400;
 }

@@ -23,6 +23,12 @@
 
 @media (max-width: 450px) {
   .default-app-area {
+    background-color: #000000;
+    background-image: url("../images/1152_700.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    background-position: center;
     width: 100%;
     box-shadow: none;
   }

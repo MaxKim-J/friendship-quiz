@@ -10,7 +10,7 @@ body {
   text-shadow: -1px -1px 30px #B4FFFF, 3px 3px 50px rgba(255, 255, 255, 0.5);
 }
 h1 {
-  font-family: UhBee ZZIBA;
+  font-family: 'UhBee ZZIBA';
   font-size: 60px;
   margin-top: 80px;
   margin-bottom: 10px;
@@ -24,7 +24,7 @@ h1 {
 
 .welcome2 {
   margin-top: 30px;
-  font-family: UhBee BEOJJI;
+  font-family: 'UhBee BEOJJI';
   font-size: 24px;
   line-height: 40px;
   margin-bottom: 20px;
@@ -44,7 +44,7 @@ h1 {
 }
 
 a {
-  font-family: UhBee ZZIBA;
+  font-family: 'UhBee ZZIBA';
   font-size: 18px;
   font-weight: normal;
   color: white;
