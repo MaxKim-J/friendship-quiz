@@ -8,7 +8,7 @@
     <!--퀴즈 응답자 이름 적는 란-->
     <div class="quizguest">퀴즈 푸는 사람:</div>
     <div class='questions'>
-      {% for quiz in quizes%}
+      {% for quiz in quizes %}
         <h2>{{quiz.question}}</h2>
         <input type="radio" name="quizform" value="1"> {{quiz.option_1}}<br>
         <input type="radio" name="quizform" value="2"> {{quiz.option_2}}<br>

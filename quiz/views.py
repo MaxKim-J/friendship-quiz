@@ -4,6 +4,7 @@ from django.contrib import messages
 from .forms import QuizSetForm, QuizFormSet
 from .models import QuizSet, Quiz
 from django.contrib import messages
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 
@@ -16,7 +17,7 @@ def get_generate_page(request):
         quiz_set_form = QuizSetForm(request.POST)
         quiz_form_set = QuizFormSet(request.POST)
         post_ctx = {
-            'quiz_set_form':quiz_set_form,
+            'quiz_set_form': quiz_set_form,
             'quiz_form_set': quiz_form_set
         }
         if quiz_set_form.is_valid() and quiz_form_set.is_valid():
@@ -48,7 +49,7 @@ def get_generate_result_page(request, quiz_set_id):
 
 
 def get_solve_page(request, quiz_set_id):
-    quizes = Quiz.objects.filter(quiz_set_id = quiz_set_id)
+    quizes = get_object_or_404(Quiz, quiz_set_id = quiz_set_id)
     return render(request, 'quiz/solvePage.html', {'quiz_set_id':quiz_set_id,'quizes':quizes})
 
 
