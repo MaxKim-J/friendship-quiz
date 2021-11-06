@@ -30,7 +30,7 @@ def get_generate_page(request):
             quiz_form_set.save()
             return redirect(f'/generate/{quiz_set}')
         else:
-             messages.error(request, '문제 혹은 이름 입력을 확인해 주세요.')
+             messages.error(request, '다 채워지지 않은 문제, 답안, 정답 입력을 확인해 주세요.')
              return render(request, 'quiz/generatePage.html', post_ctx)
     else:
         quiz_set_form = QuizSetForm()

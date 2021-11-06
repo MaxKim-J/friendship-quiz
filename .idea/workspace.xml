@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0cfb070c-b156-4ea2-97e5-8ca126aaac47" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/friendshipquiz/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/friendshipquiz/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz/static/css/_default.css" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/static/css/_default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz/templates/quiz/generateResultPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/templates/quiz/generateResultPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -221,7 +219,7 @@
       <updated>1635606389667</updated>
       <workItem from="1635606392990" duration="59000" />
       <workItem from="1636192132012" duration="1419000" />
-      <workItem from="1636193939095" duration="2709000" />
+      <workItem from="1636193939095" duration="2798000" />
     </task>
     <servers />
   </component>
