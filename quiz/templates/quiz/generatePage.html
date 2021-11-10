@@ -1,10 +1,10 @@
 {% extends 'quiz/_default.html' %} {% load static %} {% block content %}
 <link rel="stylesheet" href="{% static 'css/page/generatePage.css' %}" />
 <body>
-  <div>퀴즈를 만드는 페이지</div>
+  <div class="main">퀴즈를 만드는 페이지</div>
   <form action="{% url 'generate' %}" method="post">
     {% csrf_token %}
-    <div>{{quiz_set_form.as_p}}</div>
+    <div class="quizhost">{{quiz_set_form.as_p}}</div>
     <div>{{ quiz_form_set.management_form }}</div>
     {% if messages %}
       {% for message in messages %}
@@ -12,16 +12,15 @@
       {% endfor %}
     {% endif %}
     {% for quiz_form in quiz_form_set %}
-    <div>
+    <div class="makequiz">
       <hr />
-      <div>{{ forloop.counter }}번 문제</div>
-      <div>{{quiz_form.as_p}}</div>
+      <div class="quiznumb">{{ forloop.counter }}번 문제</div>
+      <div class="answer">{{quiz_form.as_p}}</div>
     </div>
     {% endfor %}
-    <div>
+    <div class="submitquiz">
       <input type="submit" value="출제" />
     </div>
-   
   </form>
 </body>
 {% endblock %}

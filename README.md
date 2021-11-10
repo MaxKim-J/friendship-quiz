@@ -97,3 +97,13 @@ python3 manage.py createsuperuser
 ```
 
 슈퍼유저를 만들었으면 `http://127.0.0.1:8000/admin/`로 접속한뒤 로그인을 합니다. 만약 디비를 초기화했다면 슈퍼유저도 다시 만들어야 합니다.
+
+### 브랜치 전략
+
+자신의 이름에 해당하는 브랜치 위에서 작업하고, 매 주말마다 통합합니다.
+
+```shell
+git clone https://github.com/MaxKim-J/friendship-quiz
+git remote update # 원격 브랜치 업데이트
+git checkout 자기이름브랜치
+```

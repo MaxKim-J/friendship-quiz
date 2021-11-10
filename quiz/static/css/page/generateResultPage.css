@@ -1,6 +1,54 @@
 body {
-  color: brown;
+  font-family: 'UhBee ZZIBA';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 60px;
+  text-align: center;
+  color: white;
 }
-body {
-  color: brown;
+
+.quizcomplete {
+  margin-top: 70px;
+  font-size: 34px;
+  text-shadow: -1px -1px 30px #ffaaf1, 3px 3px 50px rgba(255, 255, 255, 0.5);
+  margin-bottom: 40px;
+}
+
+a {
+  color: plum
+}
+
+.movetosolve {
+  margin-bottom: 0px;
+}
+
+.copyurl {
+  
+  font-family: 'UhBee BEOJJI';
+  font-size: 22px;
+  line-height: 50px;
+  text-shadow: -1px -1px 30px #ffaaf1, 3px 3px 50px rgba(255, 255, 255, 0.5);
+  margin-bottom: -50px;
+}
+
+
+.quizurl {
+  font-size: 18px;
+  color: black;
+}
+
+button {
+  text-align: center;
+  background: linear-gradient(21deg, #d710ff5b, #82b8ff7e);
+  border: 0px solid #ffffff;
+  border-radius: 13px;
+  width: 180px;
+  height: 40px;
+  line-height: 0px;
+  margin-top: 30px;
+}
+
+button:hover {
+  color: rgba(255, 218, 246, 0.726);
 }

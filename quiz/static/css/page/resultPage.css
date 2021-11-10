@@ -1,3 +1,31 @@
 body {
-  color: orange;
+  font-family: 'UhBee ZZIBA';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 60px;
+  text-align: center;
+  color: white;
+}
+
+.resulttitle {
+  margin-top: 50px;
+  font-family: 'UhBee MiMi';
+  font-size: 28px;
+  text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px rgb(125, 125, 255), 0 0 5px rgb(200, 133, 255);
+}
+.guestans {
+  line-height: 50px;
+  text-shadow: 0px 4px 20px #D6C7FF, 0px 4px 20px #BFC9FF;
+}
+
+.ans {
+  line-height: 50px;
+  text-shadow: 0px 4px 20px #D6C7FF, 0px 4px 20px #BFC9FF;
+  margin-bottom: 50px;
+}
+
+.sumpoint {
+  font-size: 24px;
+  text-shadow: 0px 4px 20px #D6C7FF, 0px 4px 20px #BFC9FF;
 }

@@ -4,7 +4,32 @@
 {% block content %}
   <link rel="stylesheet" href="{% static 'css/page/generateResultPage.css' %}" />
   <body>
-    <div>{{ quiz_set_id }}번 퀴즈를 출제하는데 성공했다구~</div>
-    <div>퀴즈를 풀게 하고 싶으면 <a href={% url 'solve' quiz_set_id=quiz_set_id %}>여기로</a> 가라구</div>
+    <div class="quizcomplete">{{ quiz_set_id }}번 퀴즈를<br>출제하는 데 성공했습니다!</div>
+    <img src="{% static "images/stars.png" %}" width="130">
+    <!--임시 퀴즈 풀이 링크-->
+    <!--<div class="movetosolve">퀴즈를 풀게 하고 싶으면 <a href={% url 'solve' quiz_set_id=quiz_set_id %}>여기로</a> 가라구</div>-->
+    <div class="copyurl">하단의 링크를<br>지인들에게 공유해<br>퀴즈를 풀게 하세요!</div><br>
+    <p>
+      <span class="quizurl">
+        <input type="url" name="quizurl" value="{{ request.get_host }}/solve/{{quiz_set_id}}"><br>
+        <span></span>
+      </span>
+    </p>
+
+    <button onclick="copy()">링크 복사하기</button>
+    <script>
+    function copyToClipboard(val) {
+      const t = document.createElement("textarea");
+      document.body.appendChild(t);
+      t.value = val;
+      t.select();
+      document.execCommand('copy');
+      document.body.removeChild(t);
+    }
+    function copy() {
+      copyToClipboard('{{ request.get_host }}/solve/{{quiz_set_id}}');
+      alert("복사가 완료되었습니다.");
+    }
+    </script>
   </body>
 {% endblock %}
