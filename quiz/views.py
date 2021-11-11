@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.contrib import messages 
 from .forms import QuizSetForm, QuizFormSet
-from .models import QuizSet, Quiz
+from .models import QuizSet, Quiz, Answer
 from django.contrib import messages
 
 # Create your views here.
@@ -53,4 +53,8 @@ def get_solve_page(request, quiz_set_id):
 
 
 def get_result_page(request, quiz_set_id, result_id):
-    return render(request, 'quiz/resultPage.html', {'quiz_set_id':quiz_set_id,'result_id':result_id})
+    result = Answer.objects.get(quiz_set_id = quiz_set_id)
+    points = result.points
+    guest_temp = Answer.objects.get(quiz_set_id = quiz_set_id)
+    guest = guest_temp.guest
+    return render(request, 'quiz/resultPage.html', {'quiz_set_id':quiz_set_id,'result_id':result_id, 'points':points, 'guest':guest})
