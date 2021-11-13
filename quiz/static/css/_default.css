@@ -8,7 +8,7 @@
 
 .default-app-area {
   background-color: #000000;
-  background-image: url("../images/1152_700.png");
+  background-image: url("../images/3375_2050.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: contain;
@@ -24,7 +24,7 @@
 @media (max-width: 450px) {
   .default-app-area {
     background-color: #000000;
-    background-image: url("../images/1152_700.png");
+    background-image: url("../images/3375_2050.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: contain;

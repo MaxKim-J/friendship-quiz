@@ -5,14 +5,29 @@
   <link rel="stylesheet" href="{% static 'css/page/resultPage.css' %}" />
   <body>
     <div class="resulttitle">{{quiz_set_id}}번 퀴즈에 대한<br>{{guest}}님의 답안 결과 페이지</div><br>
-    <!--답안 불러오기-->
-    <div class="guestans">당신의 답은</div>
-    <div class="ans">{{result_id}}번 문제의 답은</div>
     <div class="sumpoint">맞은 문제 점수 : {{points}}/7</div><br>
     <img src="{% static "images/plough.png" %}">
-    <button class="startbutton">
-      <a href={% url 'generate' %}>퀴즈 출제 시작하기
-      </a>  
+    <div class="leaderboard">명예의 전당</div>
+    <table align="center">
+      <tr>
+        <th>이름</th>
+        <th>점수</th>
+      </tr>
+      <tr>
+        <!--예시입니다-->
+        <td>젤리</td>
+        <td>5/7</td>
+      </tr>
+    </table><br>
+
+    <div class="share">SNS 공유</div>
+    <img class="fb" src="{% static "images/facebook.png" %}">
+    <img class="insta" src="{% static "images/instagram.png" %}"><br>
+    <img class="katalk" src="{% static "images/kakaotalk.png" %}">
+    <img class="twit" src="{% static "images/twitter.png" %}"><br>
+    <button class="metoo">
+      <a href={% url 'generate' %}>나도 퀴즈 출제하기
+      </a>
     </button>
   </body>
 {% endblock %}
