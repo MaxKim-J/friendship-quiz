@@ -9,6 +9,11 @@
     <form action="{% url 'solve' quiz_set_id %}" method="post">
       {% csrf_token %}
       <div class="quizguest">퀴즈 푸는 사람:</div> <input type="text" name="guestname">
+      {% if messages %}
+        {% for message in messages %}
+          <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+        {% endfor %}
+      {% endif %}
       <div class='questions'>
         {% for quiz in quizes %}
           <h2>{{quiz.question}}</h2>
