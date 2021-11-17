@@ -69,7 +69,7 @@ def get_solve_page(request, quiz_set_id):
         new_anwer.points = point
         new_anwer.save()
 
-        return redirect(f'/result/{quiz_set_id}/1')
+        return redirect(f'/result/{quiz_set_id}/{quiz_set}')
 
     return render(request, 'quiz/solvePage.html', {'quiz_set_id':quiz_set_id,'quizes':quizes})
 
