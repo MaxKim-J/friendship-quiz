@@ -9,7 +9,6 @@ OPTION_CHOICES = (
   (4, '4'),
   (5, '5'),
 )
-
 # Create your models here.
 class QuizSet(models.Model):
   id = models.AutoField(primary_key=True)

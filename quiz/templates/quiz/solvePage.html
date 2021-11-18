@@ -8,7 +8,7 @@
     <!--퀴즈 응답자 이름 적는 란-->
     <form action="{% url 'solve' quiz_set_id %}" method="post">
       {% csrf_token %}
-      <div class="quizguest">퀴즈 푸는 사람:</div> <input type="text" name="guestname">
+      <div class="quizguest">퀴즈 푸는 사람:</div> <input type="text" name="guestname" required>
       <div class='questions'>
         {% for quiz in quizes %}
           <h2>{{quiz.question}}</h2>

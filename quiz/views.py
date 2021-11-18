@@ -64,7 +64,7 @@ def get_solve_page(request, quiz_set_id):
         new_anwer.points = point
         new_anwer.save()
 
-        return redirect(f'/result/{quiz_set_id}/1')
+        return redirect(f'/result/{quiz_set_id}/3')
 
     return render(request, 'quiz/solvePage.html', {'quiz_set_id':quiz_set_id,'quizes':quizes})
 
@@ -73,5 +73,6 @@ def get_result_page(request, quiz_set_id, result_id):
     points = result.points
     guest_temp = Answer.objects.get(quiz_set_id = quiz_set_id)
     guest = guest_temp.guest
-    result_sets = Answer.objects.all().order_by('-points')[:5]
-    return render(request, 'quiz/resultPage.html', {'quiz_set_id':quiz_set_id,'result_id':result_id, 'points':points, 'guest':guest, 'result_sets':result_sets})
+    result_sets = Answer.objects.filter(quiz_set_id = quiz_set_id).order_by('-points')[:5]
+    return render(request, 'quiz/resultPage.html', {'quiz_set_id':quiz_set_id,'result_id':result_id, 
+                    'points':points, 'guest':guest, 'result_sets':result_sets})
