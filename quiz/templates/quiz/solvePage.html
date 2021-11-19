@@ -6,9 +6,9 @@
   <body>
     <div class="solvenumb">{{ quiz_set_id }}번 퀴즈를 푸는 페이지</div>
     <!--퀴즈 응답자 이름 적는 란-->
-    <form action="{% url 'solve' quiz_set_id %}" method="post">
+    <form action="{% url 'solve' quiz_set_id %}" method="post" onsubmit="return false" id="Form">
       {% csrf_token %}
-      <div class="quizguest">퀴즈 푸는 사람:</div> <input type="text" name="guestname">
+      <div class="quizguest">퀴즈 푸는 사람:</div> <input type="text" name="guestname" class="guestname">
       {% if messages %}
         {% for message in messages %}
           <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
@@ -24,7 +24,15 @@
           <input type="radio" name="{{ forloop.counter }}" id="{{ forloop.counter }}_5" value="5"> <label for="{{ forloop.counter }}_5">{{quiz.option_5}}</label><br>
         {% endfor %}
       </div>
-      <button type="submit" onclick="alert('제출하시겠습니까?')">퀴즈 제출 및 점수 확인</button>
+      <button type="submit" value="퀴즈제출" class="btn" onclick="btnClick()">퀴즈 제출 및 점수 확인</button>
+      <script>
+      document.getElementById("Form").onsubmit=function(){
+	      var confirm_Check=confirm("제출하시겠습니까?");
+	      if (!confirm_Check){
+		      return false;
+	      }
+      }
+      </script>
     </form>
   </body>
 {% endblock %}
