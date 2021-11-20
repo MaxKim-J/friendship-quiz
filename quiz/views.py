@@ -78,5 +78,4 @@ def get_result_page(request, quiz_set_id, result_id):
     points = result.points
     guest_temp = Answer.objects.latest('guest')
     guest = guest_temp.guest
-    total = Answer.objects.all().values()
-    return render(request, 'quiz/resultPage.html', {'quiz_set_id':quiz_set_id,'result_id':result_id, 'points':points, 'guest':guest, 'result':result, 'total':total})
+    return render(request, 'quiz/resultPage.html', {'quiz_set_id':quiz_set_id,'result_id':result_id, 'points':points, 'guest':guest, 'result':result})
