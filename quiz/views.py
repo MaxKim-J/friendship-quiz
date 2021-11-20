@@ -55,7 +55,7 @@ def get_solve_page(request, quiz_set_id):
             messages.error(request,'이름과 모든 문제의 답을 입력해주세요.')
             return render(request, 'quiz/solvePage.html', {'quiz_set_id':quiz_set_id,'quizes':quizes})
 
-        quiz_set = get_object_or_404(QuizSet, pk = quiz_set_id)
+        quiz_set = get_object_or_404(QuizSet, pk=quiz_set_id)
         point = 0
         cnt = 1
         for quiz in quizes:
@@ -69,14 +69,16 @@ def get_solve_page(request, quiz_set_id):
         new_anwer.points = point
         new_anwer.save()
 
-        return redirect(f'/result/{quiz_set_id}/{quiz_set}')
+        return redirect(f'/result/{quiz_set_id}/{new_anwer.id}')
 
     return render(request, 'quiz/solvePage.html', {'quiz_set_id':quiz_set_id,'quizes':quizes})
 
+
 def get_result_page(request, quiz_set_id, result_id):
-    result = Answer.objects.latest('points')
-    points = result.points
-    guest_temp = Answer.objects.latest('guest')
-    guest = guest_temp.guest
-    total = Answer.objects.all().values()
-    return render(request, 'quiz/resultPage.html', {'quiz_set_id':quiz_set_id,'result_id':result_id, 'points':points, 'guest':guest, 'result':result, 'total':total})
+    quiz_set = QuizSet.objects.get(id=quiz_set_id)
+    host = quiz_set.host
+    answer = Answer.objects.get(id=result_id)
+    points = answer.points
+    guest = answer.guest
+    return render(request, 'quiz/resultPage.html', {'quiz_set_id':quiz_set_id,'result_id':result_id, 'points':points, 'host': host, 'guest':guest})
+
