@@ -8,16 +8,6 @@
     <div class="sumpoint">맞은 문제 점수 : {{points}}/7</div><br>
     <div>{{total}}</div>
     <img src="{% static "images/plough.png" %}">
-    
-
-    <div class="share">SNS 공유</div>
-    <a href="https://www.facebook.com/" target="_blank"><img class="fb" src="{% static "images/facebook.png" %}"></a>
-    <a href="https://www.instagram.com/" target="_blank"><img class="insta" src="{% static "images/instagram.png" %}"></a><br>
-    <button class="metoo">
-      <a href={% url 'generate' %}>나도 퀴즈 출제하기
-      </a>
-    </button>
-
     <div class="leaderboard">명예의 전당</div>
     <table align="center">
       <tr>
@@ -30,6 +20,93 @@
         <td>{{result_set.points}}/7</td>
       </tr>
       {% endfor %}
-    </table><br>
+    </table>
+    <br>
+    <canvas id="sns-image"></canvas>
+    <button id="sns-image-download" class="metoo">이미지 다운받기</button>
+    <div class="share">SNS 공유</div>
+    <a href="https://www.facebook.com/" target="_blank"><img class="fb" src="{% static "images/facebook.png" %}"></a>
+    <a href="https://www.instagram.com/" target="_blank"><img class="insta" src="{% static "images/instagram.png" %}"></a><br>
+
+    <button class="metoo">
+      <a href={% url 'generate' %}>나도 퀴즈 출제하기
+      </a>
+    </button>
+
+  <script>
+    const setUpElements = () => {
+      const canvas = document.getElementById('sns-image');
+      const downloadButton = document.getElementById('sns-image-download');
+      canvas.setAttribute('height', 300);
+      canvas.setAttribute('width', 300);
+      const ctx = canvas.getContext('2d');
+      return {ctx, canvas, downloadButton};
+    }
+
+    const getViewData = () => ({
+      points : +'{{points}}',
+      guest : '{{guest}}',
+      host : '{{host}}',
+    })
+
+    const setTextColor = (ctx, color) => {
+      ctx.fillStyle=color;
+    }
+
+    const drawGuestAndHostText = (ctx) => {
+      ctx.font = 'bold 20px UhBee ZZIBA';
+      ctx.fillText(guest, 180, 148);
+      ctx.fillText(host, 75, 148);
+    }
+
+    const drawPercentageText = (ctx) => {
+      ctx.font = 'bold 15px UhBee ZZIBA';
+      ctx.fillText(`${Math.floor(points / 7) * 100}`, 166, 255);
+    }
+
+    const drawBackgroundImageWithText = (ctx) => {
+      const background = new Image();
+      background.src = "{% static 'images/sns-image.png' %}";
+      background.onload = () => {
+        ctx.drawImage(background, 0,0, 300, 300);
+        setTextColor(ctx, 'white');
+        drawPercentageText(ctx);
+        drawGuestAndHostText(ctx);
+      }
+    }
+
+    const drawHeartPerPoints = (ctx) => {
+      const heart = new Image();
+      heart.src = "{% static 'images/heart.png' %}";
+      heart.onload = () => {
+          for (let i = 0;i<points;i++) {
+            ctx.drawImage(heart, 31 + (i*35.82), 175, 25, 25);
+          }
+      }
+    }
+
+    const downloadCanvas = (canvas) => {
+      const url = canvas.toDataURL('image/png');
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', '우정퀴즈.png');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    const addEventListenerToDownloadButton = (canvas, downloadButton) => {
+      downloadButton.addEventListener('click', () => {
+        downloadCanvas(canvas)
+      })
+    }
+
+    const {ctx, canvas, downloadButton} = setUpElements();
+    const {points, guest, host} = getViewData();
+
+    drawBackgroundImageWithText(ctx);
+    drawHeartPerPoints(ctx);
+    addEventListenerToDownloadButton(canvas, downloadButton)
+  </script>
   </body>
 {% endblock %}
