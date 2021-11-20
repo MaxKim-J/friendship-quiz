@@ -8,18 +8,7 @@
     <div class="sumpoint">맞은 문제 점수 : {{points}}/7</div><br>
     <div>{{total}}</div>
     <img src="{% static "images/plough.png" %}">
-    <div class="leaderboard">명예의 전당</div>
-    <table align="center">
-      <tr>
-        <th>이름</th>
-        <th>점수</th>
-      </tr>
-      <tr>
-        <!--예시입니다-->
-        <td>젤리</td>
-        <td>5/7</td>
-      </tr>
-    </table><br>
+    
 
     <div class="share">SNS 공유</div>
     <img class="fb" src="{% static "images/facebook.png" %}">
@@ -30,5 +19,19 @@
       <a href={% url 'generate' %}>나도 퀴즈 출제하기
       </a>
     </button>
+
+    <div class="leaderboard">명예의 전당</div>
+    <table align="center">
+      <tr>
+        <th>이름</th>
+        <th>점수</th>
+      </tr>
+      {% for result_set in result_sets.all %}
+      <tr>
+        <td>{{result_set.guest}}</td>
+        <td>{{result_set.points}}/7</td>
+      </tr>
+      {% endfor %}
+    </table><br>
   </body>
 {% endblock %}

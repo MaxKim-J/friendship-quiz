@@ -1,55 +1,32 @@
-{% extends 'quiz/_default.html' %} {% load static %} {% block content %}
-<link rel="stylesheet" href="{% static 'css/page/solvePage.css' %}" />
-<body>
-  <div class="solvenumb">{{ quiz_set_id }}번 퀴즈를 푸는 페이지</div>
-  <!--퀴즈 응답자 이름 적는 란-->
-  <form action="{% url 'solve' quiz_set_id %}" method="post">
-    {% csrf_token %}
-    <div class="quizguest">퀴즈 푸는 사람:</div>
-    <input type="text" style="color: black" name="guestname" />
-    <div class="questions">
-      {% for quiz in quizes %}
-      <h2>{{quiz.question}}</h2>
-      <input
-        type="radio"
-        name="{{ forloop.counter }}"
-        id="{{ forloop.counter }}_1"
-        value="1"
-      />
-      <label for="{{ forloop.counter }}_1">{{quiz.option_1}}</label><br />
-      <input
-        type="radio"
-        name="{{ forloop.counter }}"
-        id="{{ forloop.counter }}_2"
-        value="2"
-      />
-      <label for="{{ forloop.counter }}_2">{{quiz.option_2}}</label><br />
-      <input
-        type="radio"
-        name="{{ forloop.counter }}"
-        id="{{ forloop.counter }}_3"
-        value="3"
-      />
-      <label for="{{ forloop.counter }}_3">{{quiz.option_3}}</label><br />
-      <input
-        type="radio"
-        name="{{ forloop.counter }}"
-        id="{{ forloop.counter }}_4"
-        value="4"
-      />
-      <label for="{{ forloop.counter }}_4">{{quiz.option_4}}</label><br />
-      <input
-        type="radio"
-        name="{{ forloop.counter }}"
-        id="{{ forloop.counter }}_5"
-        value="5"
-      />
-      <label for="{{ forloop.counter }}_5">{{quiz.option_5}}</label><br />
-      {% endfor %}
-    </div>
-    <button type="submit" onclick="alert('제출하시겠습니까?')">
-      퀴즈 제출 및 점수 확인
-    </button>
-  </form>
-</body>
+{% extends 'quiz/_default.html' %}
+{% load static %}
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/page/solvePage.css' %}" />
+  <body>
+    <div class="solvenumb">{{ quiz_set_id }}번 퀴즈를 푸는 페이지</div>
+    <!--퀴즈 응답자 이름 적는 란-->
+    <form action="{% url 'solve' quiz_set_id %}" method="post">
+      {% csrf_token %}
+
+      <div class="quizguest">퀴즈 푸는 사람:</div> <input type="text" name="guestname" required>
+      {% if messages %}
+        {% for message in messages %}
+          <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+
+      <div class='questions'>
+        {% for quiz in quizes %}
+          <h2>{{quiz.question}}</h2>
+          <input type="radio" name="{{ forloop.counter }}" id="{{ forloop.counter }}_1" value="1"> <label for="{{ forloop.counter }}_1">{{quiz.option_1}}</label><br>
+          <input type="radio" name="{{ forloop.counter }}" id="{{ forloop.counter }}_2" value="2"> <label for="{{ forloop.counter }}_2">{{quiz.option_2}}</label><br>
+          <input type="radio" name="{{ forloop.counter }}" id="{{ forloop.counter }}_3" value="3"> <label for="{{ forloop.counter }}_3">{{quiz.option_3}}</label><br>
+          <input type="radio" name="{{ forloop.counter }}" id="{{ forloop.counter }}_4" value="4"> <label for="{{ forloop.counter }}_4">{{quiz.option_4}}</label><br>
+          <input type="radio" name="{{ forloop.counter }}" id="{{ forloop.counter }}_5" value="5"> <label for="{{ forloop.counter }}_5">{{quiz.option_5}}</label><br>
+        {% endfor %}
+      </div>
+      <button type="submit" onclick="alert('제출하시겠습니까?')">퀴즈 제출 및 점수 확인</button>
+    </form>
+  </body>
 {% endblock %}
