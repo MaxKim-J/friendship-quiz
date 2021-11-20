@@ -81,3 +81,4 @@ def get_result_page(request, quiz_set_id, result_id):
     points = answer.points
     guest = answer.guest
     return render(request, 'quiz/resultPage.html', {'quiz_set_id':quiz_set_id,'result_id':result_id, 'points':points, 'host': host, 'guest':guest})
+
