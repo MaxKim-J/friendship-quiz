@@ -61,18 +61,7 @@
 
     const drawPercentageText = (ctx) => {
       ctx.font = 'bold 15px UhBee ZZIBA';
-      ctx.fillText(`${Math.floor(points / 7) * 100}`, 166, 255);
-    }
-
-    const drawBackgroundImageWithText = (ctx) => {
-      const background = new Image();
-      background.src = "{% static 'images/sns-image.png' %}";
-      background.onload = () => {
-        ctx.drawImage(background, 0,0, 300, 300);
-        setTextColor(ctx, 'white');
-        drawPercentageText(ctx);
-        drawGuestAndHostText(ctx);
-      }
+      ctx.fillText(`${(points / 7)* 100}`.slice(0,4), 166, 255);
     }
 
     const drawHeartPerPoints = (ctx) => {
@@ -82,6 +71,18 @@
           for (let i = 0;i<points;i++) {
             ctx.drawImage(heart, 31 + (i*35.82), 175, 25, 25);
           }
+      }
+    }
+
+    const drawImage = (ctx) => {
+      const background = new Image();
+      background.src = "{% static 'images/sns-image.png' %}";
+      background.onload = () => {
+        ctx.drawImage(background, 0,0, 300, 300);
+        setTextColor(ctx, 'white');
+        drawPercentageText(ctx);
+        drawGuestAndHostText(ctx);
+        drawHeartPerPoints(ctx)
       }
     }
 
@@ -104,8 +105,7 @@
     const {ctx, canvas, downloadButton} = setUpElements();
     const {points, guest, host} = getViewData();
 
-    drawBackgroundImageWithText(ctx);
-    drawHeartPerPoints(ctx);
+    drawImage(ctx);
     addEventListenerToDownloadButton(canvas, downloadButton)
   </script>
   </body>
