@@ -6,29 +6,23 @@
   justify-content: center;
 }
 
-.default-app-area {
+.default-app-background {
+  position: fixed;
   background-color: #000000;
-  background-image: url("../images/3375_2050.png");
+  background-image: url("../images/880_535.png");
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: contain;
-  background-position: center;
   width: 450px;
+  height: 100vh;
   box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 0.15);
 }
 
 .default-app-content {
   padding: 12px;
+  z-index:1;
 }
 
 @media (max-width: 450px) {
   .default-app-area {
-    background-color: #000000;
-    background-image: url("../images/3375_2050.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: contain;
-    background-position: center;
     width: 100%;
     box-shadow: none;
   }
