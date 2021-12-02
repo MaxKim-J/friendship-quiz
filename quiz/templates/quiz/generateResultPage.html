@@ -17,6 +17,21 @@
     </p>
 
     <button onclick="copy()">링크 복사하기</button>
+
+    <div class="leaderboard">명예의 전당</div>
+    <table align="center">
+      <tr>
+        <th>이름</th>
+        <th>점수</th>
+      </tr>
+      {% for result_set in result_sets.all %}
+      <tr>
+        <td>{{result_set.guest}}</td>
+        <td>{{result_set.points}}/7</td>
+      </tr>
+      {% endfor %}
+    </table><br>
+
     <script>
     function copyToClipboard(val) {
       const t = document.createElement("textarea");

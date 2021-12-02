@@ -1,0 +1,274 @@
+[33mcommit d91270dc8d6f5c9de2a1a65548eeaf4212253dc6[m[33m ([m[1;36mHEAD -> [m[1;32mjuhee[m[33m)[m
+Author: JooHee <9279482@naver.com>
+Date:   Sat Nov 20 16:57:01 2021 +0900
+
+    브랜치 변경
+
+[33mcommit d37a3409a11372f94d21eadd39d008994e6cbb98[m[33m ([m[1;31morigin/juhee[m[33m)[m
+Merge: f29bb2e fff1051
+Author: JooHee <9279482@naver.com>
+Date:   Fri Nov 19 21:34:06 2021 +0900
+
+    solver 이름 입력
+
+[33mcommit f29bb2ed33b7e1b2272495f3703c47a4199acc02[m
+Author: JooHee <9279482@naver.com>
+Date:   Thu Nov 18 22:59:14 2021 +0900
+
+    리더보드
+
+[33mcommit 387c974bb61dd97170ffed83cbf4270b465baf1e[m
+Author: JooHee <9279482@naver.com>
+Date:   Sun Nov 14 23:30:44 2021 +0900
+
+    전체 퀴즈셋 리더보드
+
+[33mcommit fff10517b81adaf87c3305f79e55da6604aa04d9[m[33m ([m[1;32mchanghyun[m[33m)[m
+Author: changhyun <ckdgus7706@naver.com>
+Date:   Sat Nov 13 22:08:34 2021 +0900
+
+    solve page에 validation 추가
+
+[33mcommit 2c8980927b45a11b75c2ddcf51c49a5ca845ebf9[m[33m ([m[1;32mmaster[m[33m)[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Sat Nov 13 17:43:34 2021 +0900
+
+    Debug True로 유지
+
+[33mcommit 25c3e2cf347338b065898620fe736ebd9d6bc8cd[m
+Merge: b0e48d7 eec9c90
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Sat Nov 13 17:43:06 2021 +0900
+
+    conflict 제거
+
+[33mcommit b0e48d7ba1a34e9c3b84de79553eb7f673b4489b[m
+Merge: 71a1f37 82f0569
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Sat Nov 13 17:40:37 2021 +0900
+
+    Merge branch 'jaehoon' of https://github.com/MaxKim-J/friendship-quiz
+
+[33mcommit eec9c90127b443f978885f4627596135f3547143[m[33m ([m[1;32mjungmin[m[33m)[m
+Author: min-vely <jeongmin322@naver.com>
+Date:   Sat Nov 13 16:27:24 2021 +0900
+
+    리더보드,나도퀴즈출제버튼 추가
+
+[33mcommit 82f0569471281b09bb41a551ba752cfdd096c74c[m[33m ([m[1;32mjaehoon[m[33m)[m
+Author: 장재훈 <Jangjaehoon@jangjaehun-ui-MacBook-Air.local>
+Date:   Thu Nov 11 14:06:41 2021 +0900
+
+    1st week
+
+[33mcommit 71a1f377050489a6233e977f73d7c6fcc39f413b[m
+Author: changhyun <ckdgus7706@naver.com>
+Date:   Thu Nov 11 05:11:03 2021 +0900
+
+    radio의 name,id 수정 / view에서 answer 객체 만들어 저장
+
+[33mcommit 5c60e65a0e90c2cb3be33bce77ead4494425a94d[m
+Merge: 87089da c277d22
+Author: changhyun <ckdgus7706@naver.com>
+Date:   Thu Nov 11 03:35:23 2021 +0900
+
+    Merge branch 'changhyun' of https://github.com/MaxKim-J/friendship-quiz into changhyun
+
+[33mcommit c277d22d7fe4803f6f452cf93be0e6c8b4af4c30[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Sat Nov 6 23:31:43 2021 +0900
+
+    font-face 추가
+
+[33mcommit fffcda1a51078ee3f374905bfbb46b72f1dba157[m[33m ([m[1;31morigin/jonghyul[m[33m)[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Sat Nov 6 22:34:00 2021 +0900
+
+    get solve 로직 수정
+
+[33mcommit a9e565682666f6132c06f2cf1eeec138678ddd3b[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Sat Nov 6 22:30:57 2021 +0900
+
+    Dependency Error 수정
+
+[33mcommit 7b89c4bb8786e3d70ec55aa677057f8180fb0cc6[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Sat Nov 6 21:18:43 2021 +0900
+
+    2021.11.6 모델 2 배포
+    
+    2021.11.6 모델 2 배포
+    
+    2021.11.6 모델 2 배포
+    
+    2021.11.6 모델 2 배포
+    
+    2021.11.6 모델 2 배포
+    
+    배포 500에러 수정
+    
+    2021.11.6 모델 2 배포
+    
+    2021.11.6 모델 2 배포
+    
+    add logger
+    
+    2021.11.6 모델 2 배포
+
+[33mcommit ed0849ef9a494a1e507c5eb983a3fe10498d6362[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Sat Nov 6 21:13:50 2021 +0900
+
+    gitignore 수정
+
+[33mcommit ab997499cf70c20f175d3e56a8024553d0a702dd[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Sat Nov 6 21:12:50 2021 +0900
+
+    에러 메시지 수정
+
+[33mcommit 8e15e66baaaf5fdce4b2186a54b9737702a89b36[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Sat Nov 6 21:12:13 2021 +0900
+
+    동적 공유 URL 설정
+
+[33mcommit cf5919c911385e280e60042867375f22b9159ebe[m
+Merge: 8c3fe35 9e850ec
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Sat Nov 6 20:42:21 2021 +0900
+
+    Merge branch 'jungmin' of https://github.com/MaxKim-J/friendship-quiz
+
+[33mcommit 9e850ec7c9cee87b2ba6c14cb78247f4260cf791[m
+Author: min-vely <jeongmin322@naver.com>
+Date:   Sat Nov 6 15:15:51 2021 +0900
+
+    UI_2
+
+[33mcommit 5033b9506fc4b2a984b01f3c1ee57a835096f1fe[m
+Author: min-vely <jeongmin322@naver.com>
+Date:   Fri Nov 5 14:19:25 2021 +0900
+
+    UI
+
+[33mcommit 87089da7e7f48c556a6b898febedd6ef91bd99c9[m
+Author: changhyun <ckdgus7706@naver.com>
+Date:   Thu Nov 4 05:48:48 2021 +0900
+
+    solvepage 띄우기 확인
+
+[33mcommit 9ccc416c212ce3d4b83fcd7bba6910d26fe612a8[m
+Author: min-vely <jeongmin322@naver.com>
+Date:   Mon Nov 1 01:32:28 2021 +0900
+
+    test
+
+[33mcommit 8c3fe35ddd864b308e68755f3cf9b0e1b899f3ca[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Sat Oct 30 19:38:44 2021 +0900
+
+    리드미 수정
+
+[33mcommit 04eb7dd7e89ca131a31aed9b909e23d2fcc2dc42[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Sat Oct 30 19:15:41 2021 +0900
+
+    배포 세팅 수정
+
+[33mcommit 48dbe052c75450b5013bb00c9492018d804f25de[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Sat Oct 30 16:15:24 2021 +0900
+
+    리드미 수정
+
+[33mcommit c6078d9188bc208b09c5bb58db58101ac51bfdd0[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Sat Oct 30 16:02:34 2021 +0900
+
+    배포 세팅
+
+[33mcommit 003f460394247e31ef9f03b93d19f124b336051b[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Sat Oct 30 00:26:39 2021 +0900
+
+    모델 answer field choice로 바꿈:
+
+[33mcommit 045931c09204b5c133ce49961e305ff786e1a588[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Fri Oct 29 23:58:57 2021 +0900
+
+    모델폼 에러표시 구현
+
+[33mcommit 85947e6585fa84de5f068e94e38f16716892d0d3[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Fri Oct 29 21:28:52 2021 +0900
+
+    formset 사용해서 기본적인  출제 기능 구현
+
+[33mcommit 56bb7b7decf296b2e2e32d76486fb1ab2ffecf9e[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Fri Oct 29 16:13:29 2021 +0900
+
+    default.html 반응형 세팅
+
+[33mcommit 4d6680ab3c7934425490cc895af9cba784728295[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Fri Oct 22 17:39:51 2021 +0900
+
+    model 작성 추가
+
+[33mcommit 98b58599c86ccc5093d7698cbab51b0b38639aab[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Fri Oct 22 17:38:30 2021 +0900
+
+    model 작성 완료
+
+[33mcommit 657c7167a4292b7b2123febda794cb53a1839cff[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Fri Oct 22 16:17:54 2021 +0900
+
+    page별 css 파일 생성
+
+[33mcommit 8789fb248bc12edcc075a84c3364594d9f8022a0[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Fri Oct 22 15:59:54 2021 +0900
+
+    Content block과 CSS Normalize
+
+[33mcommit d894c51df872d6aa0af05d2234d9df1169cc4885[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Fri Oct 22 15:47:20 2021 +0900
+
+    페이지 인터렉션 대충 구현
+
+[33mcommit 8939c079bcab5b023c4ee732cab8b2f929435ae4[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Fri Oct 22 15:30:56 2021 +0900
+
+    5개 페이지에 대한 기본 URL, URL 파라미터 세팅 완료
+
+[33mcommit 86da48984143e9bc47ac67af5be5ab804b1d7b1f[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Fri Oct 22 14:43:03 2021 +0900
+
+    README 수정
+
+[33mcommit f2346de2a31083f8de39a833517da4412b211b69[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Fri Oct 15 12:58:47 2021 +0900
+
+    setup:static 셋업
+
+[33mcommit f1c7a46f0cc087c17742d29f35165147a20b08b5[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Fri Oct 15 12:52:20 2021 +0900
+
+    setup:templates, view 연동 셋업
+
+[33mcommit 6eadde3f586ceca36653a30bc845c7862b5ad030[m
+Author: Max Kim <hwaseen@gmail.com>
+Date:   Fri Oct 15 12:32:44 2021 +0900
+
+    init

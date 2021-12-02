@@ -8,6 +8,10 @@ body {
   color: white;
 }
 
+.error {
+  color: red;
+}
+
 .solvenumb {
   font-family: 'UhBee MiMi';
   font-size: 28px;

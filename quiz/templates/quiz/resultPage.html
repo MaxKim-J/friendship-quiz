@@ -6,19 +6,8 @@
   <body>
     <div class="resulttitle">{{quiz_set_id}}번 퀴즈에 대한<br>{{guest}}님의 답안 결과 페이지</div><br>
     <div class="sumpoint">맞은 문제 점수 : {{points}}/7</div><br>
+    <div>{{total}}</div>
     <img src="{% static "images/plough.png" %}">
-    
-
-    <div class="share">SNS 공유</div>
-    <img class="fb" src="{% static "images/facebook.png" %}">
-    <img class="insta" src="{% static "images/instagram.png" %}"><br>
-    <img class="katalk" src="{% static "images/kakaotalk.png" %}">
-    <img class="twit" src="{% static "images/twitter.png" %}"><br>
-    <button class="metoo">
-      <a href={% url 'generate' %}>나도 퀴즈 출제하기
-      </a>
-    </button>
-
     <div class="leaderboard">명예의 전당</div>
     <table align="center">
       <tr>
@@ -31,6 +20,17 @@
         <td>{{result_set.points}}/7</td>
       </tr>
       {% endfor %}
-    </table><br>
+    </table>
+    <br>
+    <canvas id="sns-image"></canvas>
+    <button id="sns-image-download" class="metoo">이미지 다운받기</button>
+    <div class="share">SNS 공유</div>
+    <a href="https://www.facebook.com/" target="_blank"><img class="fb" src="{% static "images/facebook.png" %}"></a>
+    <a href="https://www.instagram.com/" target="_blank"><img class="insta" src="{% static "images/instagram.png" %}"></a><br>
+
+    <button class="metoo">
+      <a href={% url 'generate' %}>나도 퀴즈 출제하기
+      </a>
+    </button>
   </body>
 {% endblock %}
