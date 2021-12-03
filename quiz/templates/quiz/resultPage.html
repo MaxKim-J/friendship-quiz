@@ -4,12 +4,12 @@
 {% block content %}
   <link rel="stylesheet" href="{% static 'css/page/resultPage.css' %}" />
   <body>
-    <div class="resulttitle">{{quiz_set_id}}번 퀴즈에 대한<br>{{guest}}님의 답안 결과 페이지</div><br>
+    <div class="resulttitle">{{host}}님의 퀴즈에 대한 <br>{{guest}}님의 답안 결과 페이지</div><br>
     <div class="sumpoint">맞은 문제 점수 : {{points}}/7</div><br>
     <div>{{total}}</div>
     <img src="{% static "images/plough.png" %}">
     <div class="leaderboard">명예의 전당</div>
-    <table align="center">
+    <table>
       <tr>
         <th>이름</th>
         <th>점수</th>
