@@ -23,11 +23,11 @@
     </table>
     <br>
     <canvas id="sns-image"></canvas>
+    <br>
     <button id="sns-image-download" class="metoo">이미지 다운받기</button>
     <div class="share">SNS 공유</div>
     <a href="https://www.facebook.com/" target="_blank"><img class="fb" src="{% static "images/facebook.png" %}"></a>
     <a href="https://www.instagram.com/" target="_blank"><img class="insta" src="{% static "images/instagram.png" %}"></a><br>
-
     <button class="metoo">
       <a href={% url 'generate' %}>나도 퀴즈 출제하기
       </a>
@@ -54,9 +54,10 @@
     }
 
     const drawGuestAndHostText = (ctx) => {
-      ctx.font = 'bold 20px UhBee ZZIBA';
-      ctx.fillText(guest, 180, 148);
-      ctx.fillText(host, 75, 148);
+      ctx.textAlign = 'center';
+      ctx.font = 'bold 15px UhBee ZZIBA';
+      ctx.fillText(host, 75, 145);
+      ctx.fillText(guest, 225, 145);
     }
 
     const drawPercentageText = (ctx) => {
@@ -88,12 +89,8 @@
 
     const downloadCanvas = (canvas) => {
       const url = canvas.toDataURL('image/png');
-      const link = document.createElement('a');
-      link.href = url;
-      link.setAttribute('download', '우정퀴즈.png');
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      const newTab = window.open('about:blank','image from canvas');
+      newTab.document.write("<img src='" + url + "' alt='from canvas'/>");
     }
 
     const addEventListenerToDownloadButton = (canvas, downloadButton) => {
