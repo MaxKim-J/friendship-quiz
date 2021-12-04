@@ -49,12 +49,14 @@ def get_generate_result_page(request, quiz_set_id):
 
 
 def get_solve_page(request, quiz_set_id):
+    quiz_set = QuizSet.objects.get(id=quiz_set_id)
+    host = quiz_set.host
     quizes = Quiz.objects.filter(quiz_set_id = quiz_set_id)
     if request.method == 'POST':
 
         if len(request.POST) < 9 or request.POST['guestname'] == None:
             messages.error(request,'이름과 모든 문제의 답을 입력해주세요.')
-            return render(request, 'quiz/solvePage.html', {'quiz_set_id':quiz_set_id,'quizes':quizes})
+            return render(request, 'quiz/solvePage.html', {'quiz_set_id':quiz_set_id,'quizes':quizes, 'host':host})
         quiz_set = get_object_or_404(QuizSet, pk=quiz_set_id)
 
         point = 0
@@ -70,7 +72,8 @@ def get_solve_page(request, quiz_set_id):
         new_anwer.points = point
         new_anwer.save()
         return redirect(f'/result/{quiz_set_id}/{new_anwer.id}')
-    return render(request, 'quiz/solvePage.html', {'quiz_set_id':quiz_set_id,'quizes':quizes})
+
+    return render(request, 'quiz/solvePage.html', {'quiz_set_id':quiz_set_id,'quizes':quizes, 'host':host})
 
 
 def get_result_page(request, quiz_set_id, result_id):

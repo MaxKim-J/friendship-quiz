@@ -4,7 +4,7 @@
 {% block content %}
   <link rel="stylesheet" href="{% static 'css/page/solvePage.css' %}" />
   <body>
-    <div class="solvenumb">{{ quiz_set_id }}번 퀴즈를 푸는 페이지</div>
+    <div class="solvenumb">{{host}}님의 퀴즈를 푸는 페이지</div>
     <!--퀴즈 응답자 이름 적는 란-->
     <form action="{% url 'solve' quiz_set_id %}" method="post" onsubmit="return false" id="Form">
       {% csrf_token %}
