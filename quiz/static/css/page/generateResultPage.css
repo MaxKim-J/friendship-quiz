@@ -33,6 +33,18 @@ a {
 }
 
 
+.leaderboard {
+  font-size: 26px;
+  text-shadow: 0px 4px 20px #D6C7FF, 0px 4px 20px #BFC9FF;
+}
+
+table, th, td {
+  border: 3px dotted white;
+  text-align: center;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
 .quizurl {
   font-size: 18px;
   color: black;
@@ -52,3 +64,4 @@ button {
 button:hover {
   color: rgba(255, 218, 246, 0.726);
 }
+
