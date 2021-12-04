@@ -1,7 +1,5 @@
 .default-background {
   background-color: #eaeaea;
-  width: 100%;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
 }
@@ -17,12 +15,13 @@
 }
 
 .default-app-content {
+  width: 450px;
   padding: 12px;
   z-index:1;
 }
 
 @media (max-width: 450px) {
-  .default-app-area {
+  .default-app-background {
     width: 100%;
     box-shadow: none;
   }

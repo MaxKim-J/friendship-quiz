@@ -17,7 +17,7 @@
 
       <div class='questions'>
         {% for quiz in quizes %}
-          <h2>{{quiz.question}}</h2>
+          <h2 class="question">{{quiz.question}}</h2>
           <input type="radio" name="{{ forloop.counter }}" id="{{ forloop.counter }}_1" value="1"> <label for="{{ forloop.counter }}_1">{{quiz.option_1}}</label><br>
           <input type="radio" name="{{ forloop.counter }}" id="{{ forloop.counter }}_2" value="2"> <label for="{{ forloop.counter }}_2">{{quiz.option_2}}</label><br>
           <input type="radio" name="{{ forloop.counter }}" id="{{ forloop.counter }}_3" value="3"> <label for="{{ forloop.counter }}_3">{{quiz.option_3}}</label><br>

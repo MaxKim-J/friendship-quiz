@@ -8,6 +8,21 @@
     <div class="sumpoint">맞은 문제 점수 : {{points}}/7</div><br>
     <div>{{total}}</div>
     <img src="{% static "images/plough.png" %}">
+    <div class="leaderboard">퀴즈 정답</div>
+
+      <table>
+      <tr>
+      <th>문제</th>
+      <th>정답</th>
+      </tr>
+           {% for quiz in quizes %}
+      <tr>
+        <td>{{quiz.question}}</td>
+        <td>{{quiz.answer}}</td>
+      </tr>
+         {% endfor %}
+      </table>
+
     <div class="leaderboard">명예의 전당</div>
     <table>
       <tr>

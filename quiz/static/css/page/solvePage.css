@@ -25,6 +25,10 @@ body {
   text-shadow: 0 0 3px rgb(171, 125, 255), 0 0 10px blue;
 }
 
+
+form {
+  width: 100%;
+}
 .guestname {
   font-family: 'UhBee ZZIBA';
   font-size: 18px;
@@ -33,6 +37,12 @@ body {
 
 .questions {
   line-height: 40px;
+}
+
+.question {
+  width: 80%;
+  line-break: anywhere;
+  margin: 20px auto;
 }
 
 .btn {
