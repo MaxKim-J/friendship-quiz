@@ -11,7 +11,7 @@
       <div class="quizguest">퀴즈 푸는 사람:</div> <input type="text" name="guestname" class="guestname" required maxlength="10">
       {% if messages %}
         {% for message in messages %}
-          <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+          <div {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
         {% endfor %}
       {% endif %}
 

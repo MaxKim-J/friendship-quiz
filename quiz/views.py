@@ -74,10 +74,11 @@ def get_solve_page(request, quiz_set_id):
 
 
 def get_result_page(request, quiz_set_id, result_id):
-    result = Answer.objects.latest('points')
-    points = result.points
-    guest_temp = Answer.objects.latest('guest')
-    guest = guest_temp.guest
-    result_sets = Answer.objects.filter(quiz_set_id = quiz_set_id).order_by('-points')[:5]
+    quiz_set = QuizSet.objects.get(id=quiz_set_id)
+    host = quiz_set.host
+    answer = Answer.objects.get(id=result_id)
+    points = answer.points
+    guest = answer.guest
+    result_sets = Answer.objects.filter(quiz_set_id=quiz_set_id).order_by('-points')[:5]
     return render(request, 'quiz/resultPage.html', {'quiz_set_id':quiz_set_id,'result_id':result_id, 
-                    'points':points, 'guest':guest, 'result':result, 'result_sets':result_sets})
+                    'points':points, 'guest':guest, 'host':host, 'result_sets':result_sets})
