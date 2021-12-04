@@ -18,7 +18,6 @@
       <div class='questions'>
         {% for quiz, is_checked in quizes %}
           <h2>{{quiz.question}}</h2>
-          {{forloop.counter}}
           <input type="radio" name="{{ forloop.counter }}" id="{{ forloop.counter }}_1" value="1" {% if is_checked == 1 %} checked {% endif%}> <label for="{{ forloop.counter }}_1">{{quiz.option_1}}</label><br>
           <input type="radio" name="{{ forloop.counter }}" id="{{ forloop.counter }}_2" value="2" {% if is_checked == 2 %} checked {% endif%}> <label for="{{ forloop.counter }}_2">{{quiz.option_2}}</label><br>
           <input type="radio" name="{{ forloop.counter }}" id="{{ forloop.counter }}_3" value="3" {% if is_checked == 3 %} checked {% endif%}> <label for="{{ forloop.counter }}_3">{{quiz.option_3}}</label><br>
