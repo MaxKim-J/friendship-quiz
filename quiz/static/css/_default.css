@@ -2,11 +2,11 @@
   background-color: #eaeaea;
   display: flex;
   justify-content: center;
+  min-height: 100vh;
 }
 
 .default-app-background {
   position: fixed;
-  background-color: #000000;
   background-image: url("../images/880_535.png");
   background-repeat: no-repeat;
   width: 450px;

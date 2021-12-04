@@ -52,11 +52,17 @@ def get_solve_page(request, quiz_set_id):
     quiz_set = QuizSet.objects.get(id=quiz_set_id)
     host = quiz_set.host
     quizes = Quiz.objects.filter(quiz_set_id = quiz_set_id)
+    previous_checked = [0 for x in range(7)]
     if request.method == 'POST':
 
         if len(request.POST) < 9 or request.POST['guestname'] == None:
             messages.error(request,'이름과 모든 문제의 답을 입력해주세요.')
-            return render(request, 'quiz/solvePage.html', {'quiz_set_id':quiz_set_id,'quizes':quizes, 'host':host})
+
+            for i in range(1,8):
+                if str(i) in dict(request.POST).keys():
+                    previous_checked[i-1] = int(request.POST[str(i)])
+            return render(request, 'quiz/solvePage.html', {'quiz_set_id':quiz_set_id,'quizes':zip(quizes,previous_checked), 'guestname': request.POST['guestname']})
+
         quiz_set = get_object_or_404(QuizSet, pk=quiz_set_id)
 
         point = 0
@@ -73,7 +79,7 @@ def get_solve_page(request, quiz_set_id):
         new_anwer.save()
         return redirect(f'/result/{quiz_set_id}/{new_anwer.id}')
 
-    return render(request, 'quiz/solvePage.html', {'quiz_set_id':quiz_set_id,'quizes':quizes, 'host':host})
+    return render(request, 'quiz/solvePage.html', {'quiz_set_id':quiz_set_id,'quizes':zip(quizes,previous_checked)})
 
 
 def get_result_page(request, quiz_set_id, result_id):
