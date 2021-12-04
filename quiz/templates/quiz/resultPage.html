@@ -15,14 +15,16 @@
       <th>문제</th>
       <th>정답</th>
       </tr>
-           {% for quiz in quizes %}
-      <tr>
-        <td>{{quiz.question}}</td>
-        <td>{{quiz.answer}}</td>
-      </tr>
-         {% endfor %}
+      {% for quiz, id, answer in quizes %}
+        <tr>
+          <td>{{id}}</td>
+          <td>
+            <div>{{quiz.answer}}번 {{answer}}</div>
+          </td>
+        </tr>
+       {% endfor %}
       </table>
-
+<br/>
     <div class="leaderboard">명예의 전당</div>
     <table>
       <tr>
