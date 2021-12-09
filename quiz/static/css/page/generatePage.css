@@ -27,12 +27,14 @@ body {
 
 .makequiz{
   font-size: 20px;
+  text-align: left;
 }
 
 .quiznumb {
   font-family: 'UhBee MiMi';
   font-size: 26px;
   text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px rgb(125, 125, 255), 0 0 5px rgb(200, 133, 255);
+  margin: 0 2rem;
 }
 
 .submitquiz {
@@ -41,6 +43,7 @@ body {
 } 
 
 .answer {
+  margin: 0 2rem;
   font-family: 'UhBee ZZIBA';
   color:rgb(226, 163, 255);
   text-shadow: 0 0 3px rgb(171, 125, 255), 0 0 10px blue;
@@ -49,4 +52,42 @@ body {
 .submitquiz {
   font-family: 'UhBee ZZIBA';
   font-size: 18px;
+}
+
+.answer p:not(:first-child) {
+  display: flex;
+  justify-content: space-between;
+}
+
+p input {
+  border:none;
+  border-bottom: 3px solid #e2a3ff;
+  background: transparent;
+  color:white;
+  width: 75%;
+}
+
+#id_host {
+  width: 65%;
+}
+
+#id_form-0-question,
+#id_form-1-question,
+#id_form-2-question,
+#id_form-3-question,
+#id_form-5-question,
+#id_form-6-question,
+#id_form-7-question,
+#id_form-4-question {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+@media (max-width: 450px) {
+  .answer {
+    margin: 0 0.25rem;
+  }
+  .quiznumb {
+    margin: 0 0.25rem;
+  }
 }

@@ -37,6 +37,24 @@ form {
 
 .questions {
   line-height: 40px;
+  text-align: left;
+  margin: 0 1rem;
+}
+
+@media (max-width: 450px) {
+  .questions {
+    margin: 0 0.25rem;
+  }
+}
+
+.questions div {
+    margin: 2rem 0;
+}
+
+.questions div h2 {
+  background-color: #c364ef;
+  display: inline;
+  padding: 0.1rem 0.5rem;
 }
 
 .question {
@@ -44,6 +62,8 @@ form {
   line-break: anywhere;
   margin: 20px auto;
 }
+
+
 
 .btn {
   color: rgb(255, 255, 255);
@@ -61,4 +81,12 @@ form {
 
 .btn:hover {
   color: rgba(255, 168, 241, 0.603);
+}
+
+input.guestname {
+  border:none;
+  border-bottom: 3px solid #e2a3ff;
+  background: transparent;
+  color:white;
+  width: 50%;
 }
