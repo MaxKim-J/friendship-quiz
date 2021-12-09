@@ -48,13 +48,18 @@ form {
 }
 
 .questions div {
-    margin: 2rem 0;
+  margin: 2rem 0;
+}
+
+.questions label {
+  line-break: anywhere;
 }
 
 .questions div h2 {
   background-color: #c364ef;
   display: inline;
   padding: 0.1rem 0.5rem;
+  line-break: anywhere;
 }
 
 .question {
@@ -62,8 +67,6 @@ form {
   line-break: anywhere;
   margin: 20px auto;
 }
-
-
 
 .btn {
   color: rgb(255, 255, 255);
