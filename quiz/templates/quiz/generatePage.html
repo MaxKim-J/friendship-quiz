@@ -12,8 +12,9 @@
       {% endfor %}
     {% endif %}
     {% for quiz_form in quiz_form_set %}
+          <hr />
     <div class="makequiz">
-      <hr />
+
       <div class="quiznumb">{{ forloop.counter }}번 문제</div>
       <div class="answer">{{quiz_form.as_p}}</div>
     </div>
