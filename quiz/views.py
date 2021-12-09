@@ -1,14 +1,19 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, render_to_response
 from django.http import HttpResponseRedirect
 from django.contrib import messages 
 from .forms import QuizSetForm, QuizFormSet
 from .models import QuizSet, Quiz, Answer
 from django.contrib import messages
+from django.template import RequestContext
 
 # Create your views here.
 
 def get_start_page(request):
     return render(request, 'quiz/startPage.html', {})
+
+
+def get_error_page(request):
+    return render(request, 'quiz/error.html', {})
 
 
 def get_generate_page(request):
@@ -49,8 +54,11 @@ def get_generate_result_page(request, quiz_set_id):
 
 
 def get_solve_page(request, quiz_set_id):
-    quiz_set = QuizSet.objects.get(id=quiz_set_id)
-    host = quiz_set.host
+    latest_quizset = QuizSet.objects.latest("id")
+
+    if quiz_set_id > latest_quizset.id:
+        return redirect('/error')
+
     quizes = Quiz.objects.filter(quiz_set_id = quiz_set_id)
     previous_checked = [0 for x in range(7)]
     if request.method == 'POST':
@@ -95,3 +103,4 @@ def get_result_page(request, quiz_set_id, result_id):
     result_sets = Answer.objects.filter(quiz_set_id=quiz_set_id).order_by('-points')[:5]
     return render(request, 'quiz/resultPage.html', {'quiz_set_id':quiz_set_id,'result_id':result_id, 
                     'points':points, 'guest':guest, 'host':host, 'result_sets':result_sets,'quizes': zip(quizes, [1,2,3,4,5,6,7], quiz_answers)})
+

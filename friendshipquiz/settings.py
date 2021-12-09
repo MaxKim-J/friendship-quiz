@@ -26,10 +26,7 @@ SECRET_KEY = 'sf)e1!h0lk*)=7#^)1$39oii)ja+-l@@brn)%*o5^bq9qsn5zk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'friendship-quiz-live.herokuapp.com', '*']
-
-
-# Application definition
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -40,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'quiz'
 ]
+
+COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

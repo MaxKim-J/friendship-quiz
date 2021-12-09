@@ -1,0 +1,18 @@
+{% extends 'quiz/_default.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'css/page/errorPage.css' %}" />
+
+<div class="error-main">
+  <div class="error-content">
+      <h1>잘못된 접근입니다.</h1>
+      <button type="button" class="goback">
+          뒤로가기
+        </button>
+  </div>
+</div>
+
+<script>
+  document.querySelector('.goback').addEventListener('click', () => {
+    history.back()
+  })
+</script>
+{% endblock %}
