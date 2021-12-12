@@ -59,6 +59,7 @@ def get_solve_page(request, quiz_set_id):
     if quiz_set_id > latest_quizset.id:
         return redirect('/error')
 
+    quiz_set = QuizSet.objects.get(id=quiz_set_id)
     quizes = Quiz.objects.filter(quiz_set_id = quiz_set_id)
     previous_checked = [0 for x in range(7)]
     if request.method == 'POST':
@@ -69,7 +70,12 @@ def get_solve_page(request, quiz_set_id):
             for i in range(1,8):
                 if str(i) in dict(request.POST).keys():
                     previous_checked[i-1] = int(request.POST[str(i)])
-            return render(request, 'quiz/solvePage.html', {'quiz_set_id':quiz_set_id,'quizes':zip(quizes,previous_checked), 'guestname': request.POST['guestname']})
+            return render(request, 'quiz/solvePage.html', {
+                'quiz_set_id':quiz_set_id,
+                'quizes':zip(quizes,previous_checked),
+                'guestname': request.POST['guestname'],
+                'host': quiz_set.host
+            })
 
         quiz_set = get_object_or_404(QuizSet, pk=quiz_set_id)
 
@@ -87,7 +93,11 @@ def get_solve_page(request, quiz_set_id):
         new_anwer.save()
         return redirect(f'/result/{quiz_set_id}/{new_anwer.id}')
 
-    return render(request, 'quiz/solvePage.html', {'quiz_set_id':quiz_set_id,'quizes':zip(quizes,previous_checked)})
+    return render(request, 'quiz/solvePage.html', {
+        'quiz_set_id':quiz_set_id,
+        'quizes':zip(quizes,previous_checked),
+        'host': quiz_set.host
+    })
 
 
 def get_result_page(request, quiz_set_id, result_id):
